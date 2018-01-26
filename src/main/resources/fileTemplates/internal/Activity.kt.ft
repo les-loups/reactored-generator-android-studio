@@ -1,0 +1,12 @@
+package ${SCREEN_PACKAGE}
+
+import ${REACTORED_PACKAGE}.base.BaseActivity
+
+class ${ACTIVITY_NAME} : BaseActivity<${ACTION_NAME}, ${STATE_NAME}, ${FLASH_NAME}, ${VIEW_NAME}>() {
+
+    override val reactor = ${REACTOR_NAME}()
+
+    override fun onCreateView(): ${VIEW_NAME} {
+      return ${VIEW_NAME}(this)
+    }
+}

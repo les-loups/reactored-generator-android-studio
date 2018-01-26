@@ -1,0 +1,44 @@
+<idea-plugin>
+    <id>io.intheloup.reactored.generator</id>
+    <name>Reactored Generator</name>
+    <vendor url="http://intheloup.io">Loup</vendor>
+
+    <!-- version defined in build.gradle -->
+    <version>0.1-SNAPSHOT</version>
+
+    <description><![CDATA[
+        Generate all the files required for a new Reactored screen at once.
+    ]]></description>
+
+    <change-notes><![CDATA[
+    ]]>
+    </change-notes>
+
+    <!-- see: https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges -->
+    <idea-version since-build="171"/>
+
+    <!-- see: https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Productsz -->
+    <depends>com.intellij.modules.lang</depends>
+    <depends>org.jetbrains.android</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <defaultProjectTypeProvider type="Android"/>
+    </extensions>
+
+    <application-components>
+    </application-components>
+
+    <project-components>
+    </project-components>
+
+    <actions>
+        <action id="NewReactoredScreen"
+                class="io.intheloup.reactored.generator.action.NewScreenAction"
+                text="Reactor Screen"
+                description="New reactor screen"
+                icon="/icons/action.png">
+            <add-to-group group-id="NewGroup" anchor="after" relative-to-action="Kotlin.NewFile"/>
+        </action>
+    </actions>
+
+</idea-plugin>

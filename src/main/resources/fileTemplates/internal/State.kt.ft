@@ -1,0 +1,9 @@
+package ${SCREEN_PACKAGE}
+
+data class ${STATE_NAME}(
+    val to: String = "do"
+) {
+    data class ${FLASH_SUBCLASS_NAME} (
+        val no: String = "thing"
+    )
+}

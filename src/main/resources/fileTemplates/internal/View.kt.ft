@@ -1,0 +1,21 @@
+package ${SCREEN_PACKAGE};
+
+import android.content.Context
+import android.widget.FrameLayout
+import ${REACTORED_PACKAGE}.ReactorView
+import io.reactivex.Observable
+
+class ${VIEW_NAME}(context: Context) : FrameLayout(context), ReactorView<${ACTION_NAME}, ${STATE_NAME}, ${FLASH_NAME}> {
+
+    override fun bind(state: ${STATE_NAME}) {
+
+    }
+
+    override fun show(flash: ${FLASH_NAME}) {
+
+    }
+
+    override fun actions(): Observable<out ${ACTION_NAME}> {
+        return Observable.empty()
+    }
+}

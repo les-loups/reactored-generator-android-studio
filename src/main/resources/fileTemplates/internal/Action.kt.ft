@@ -1,0 +1,5 @@
+package ${SCREEN_PACKAGE}
+
+sealed class ${ACTION_NAME} {
+
+}

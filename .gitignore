@@ -1,0 +1,9 @@
+g.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea
+/.idea/dictionaries
+.DS_Store
+/build
+/.gradle/
+out/
