@@ -1,21 +1,32 @@
 package ${SCREEN_PACKAGE};
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.widget.FrameLayout
 import ${REACTORED_PACKAGE}.ReactorView
 import io.reactivex.Observable
 
+@SuppressLint("ViewConstructor")
 class ${VIEW_NAME}(context: Context) : FrameLayout(context), ReactorView<${ACTION_NAME}, ${STATE_NAME}, ${FLASH_NAME}> {
+
+    init {
+        // View.inflate(context, R.layout. , this)
+        setupView()
+    }
+
+
+    // Reactor
 
     override fun bind(state: ${STATE_NAME}) {
 
     }
 
-    override fun show(flash: ${FLASH_NAME}) {
+    override fun actions(): Observable<in ${ACTION_NAME}> = Observable.empty()
 
-    }
 
-    override fun actions(): Observable<out ${ACTION_NAME}> {
-        return Observable.empty()
+    // UI
+
+    private fun setupView() {
+
     }
 }
