@@ -21,7 +21,7 @@ class ${VIEW_NAME}(context: Context) : FrameLayout(context), ReactorView<${ACTIO
 
     }
 
-    override fun actions(): Observable<in ${ACTION_NAME}> = Observable.empty()
+    override fun actions(): Observable<${ACTION_NAME}> = Observable.empty()
 
 
     // UI
