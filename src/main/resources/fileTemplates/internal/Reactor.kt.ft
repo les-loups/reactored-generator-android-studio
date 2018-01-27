@@ -9,7 +9,12 @@ class ${REACTOR_NAME} : Reactor<${ACTION_NAME}, ${STATE_NAME}, ${FLASH_NAME}> {
 
     override val flash = Store<${FLASH_NAME}>(${FLASH_NAME}())
 
-    override fun dispatch(action: ${ACTION_NAME}) {
-
+    override fun dispatch(action: ${ACTION_NAME}) = when (action) {
+        else -> throw IllegalStateException("Unknown action ${action.javaClass.name}")
     }
+
+
+    // Actions
+
+
 }
