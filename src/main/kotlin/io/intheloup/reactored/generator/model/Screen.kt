@@ -10,6 +10,7 @@ data class Screen(
         val flashName: String,
         val actionName: String,
         val viewName: String,
+        val controllerName: String,
         val layoutName: String,
         val includesLayout: Boolean
 ) {
@@ -28,6 +29,7 @@ data class Screen(
                     "${stateName}.Flash",
                     "${clsName}Action",
                     "${clsName}View",
+                    "${clsName}Controller",
                     layoutName,
                     includesLayout
             )

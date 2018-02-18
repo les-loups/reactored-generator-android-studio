@@ -11,7 +11,7 @@ import org.jetbrains.kotlin.idea.core.getPackage
 object TemplateBuilder {
 
     enum class Template {
-        Activity, Reactor, Action, State, View
+        Activity, Reactor, Action, State, View, Controller
     }
 
     private object Properties {
@@ -24,6 +24,7 @@ object TemplateBuilder {
         const val FlashName = "FLASH_NAME"
         const val FlashSubclassName = "FLASH_SUBCLASS_NAME"
         const val ViewName = "VIEW_NAME"
+        const val ControllerName = "CONTROLLER_NAME"
     }
 
     fun build(screen: Screen, project: Project, destinationDirectory: PsiDirectory, reactoredPackaged: PsiPackage) {
@@ -43,7 +44,7 @@ object TemplateBuilder {
             Template.Action -> Pair(it, screen.actionName)
             Template.State -> Pair(it, screen.stateName)
             Template.View -> Pair(it, screen.viewName)
-            else -> throw IllegalStateException("Template ${it.name} not supported")
+            Template.Controller -> Pair(it, screen.controllerName)
         }
     }
 
@@ -58,6 +59,7 @@ object TemplateBuilder {
         put(Properties.FlashName, screen.flashName)
         put(Properties.FlashSubclassName, screen.flashName.substringAfterLast(".", screen.flashName))
         put(Properties.ViewName, screen.viewName)
+        put(Properties.ControllerName, screen.controllerName)
     }
 
 }

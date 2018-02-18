@@ -2,12 +2,12 @@ package ${SCREEN_PACKAGE};
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.widget.FrameLayout
+import android.support.constraint.ConstraintLayout
 import ${REACTORED_PACKAGE}.ReactorView
 import io.reactivex.Observable
 
 @SuppressLint("ViewConstructor")
-class ${VIEW_NAME}(context: Context) : FrameLayout(context), ReactorView<${ACTION_NAME}, ${STATE_NAME}, ${FLASH_NAME}> {
+class ${VIEW_NAME}(context: Context) : ConstraintLayout(context), ReactorView<${ACTION_NAME}, ${STATE_NAME}, ${FLASH_NAME}> {
 
     init {
         // View.inflate(context, R.layout. , this)
@@ -21,7 +21,13 @@ class ${VIEW_NAME}(context: Context) : FrameLayout(context), ReactorView<${ACTIO
 
     }
 
-    override fun actions(): Observable<${ACTION_NAME}> = Observable.empty()
+    override fun show(flash: ${FLASH_NAME}) {
+
+    }
+
+    override fun actions(): Observable<${ACTION_NAME}> = Observable.merge<${ACTION_NAME}>(listOf(
+
+    )).filter { isEnabled }
 
 
     // UI

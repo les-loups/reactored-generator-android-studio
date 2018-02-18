@@ -1,9 +1,18 @@
 package ${SCREEN_PACKAGE}
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class ${STATE_NAME}(
     val to: String = "do"
-) {
-    data class ${FLASH_SUBCLASS_NAME} (
-        val no: String = "thing"
-    )
+): Parcelable {
+
+    enum class Navigation {
+        None;
+
+        var payload: Any? = null
+    }
+
+    data class ${FLASH_SUBCLASS_NAME}(val navigation: Navigation = Navigation.None)
 }

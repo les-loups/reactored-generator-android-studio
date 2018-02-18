@@ -1,0 +1,15 @@
+package ${SCREEN_PACKAGE}
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import ${REACTORED_PACKAGE}.base.BaseController
+
+class ${CONTROLLER_NAME}(args: Bundle? = null) : BaseController<${ACTION_NAME}, ${STATE_NAME}, ${FLASH_NAME}, ${VIEW_NAME}>(args) {
+
+    override val reactor by lazy { ${REACTOR_NAME}(kodein) }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): ${VIEW_NAME} {
+      return ${VIEW_NAME}(container.context)
+    }
+}

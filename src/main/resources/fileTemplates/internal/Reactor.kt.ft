@@ -1,13 +1,9 @@
-package ${SCREEN_PACKAGE};
+package ${SCREEN_PACKAGE}
 
-import ${REACTORED_PACKAGE}.Reactor
-import ${REACTORED_PACKAGE}.Store
+import ${REACTORED_PACKAGE}.base.BaseReactor
+import org.kodein.Kodein
 
-class ${REACTOR_NAME} : Reactor<${ACTION_NAME}, ${STATE_NAME}, ${FLASH_NAME}> {
-
-    override val store = Store<${STATE_NAME}>(${STATE_NAME}())
-
-    override val flash = Store<${FLASH_NAME}>(${FLASH_NAME}())
+class ${REACTOR_NAME}(kodein: Kodein) : BaseReactor<${ACTION_NAME}, ${STATE_NAME}, ${FLASH_NAME}>(${STATE_NAME}(), ${FLASH_NAME}())  {
 
     override fun dispatch(action: ${ACTION_NAME}) = when (action) {
         is ${ACTION_NAME}.FirstAction -> firstAction()
