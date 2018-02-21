@@ -17,7 +17,7 @@ apply plugin: 'org.jetbrains.intellij'
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
-version "0.1-SNAPSHOT"
+version "0.2-SNAPSHOT"
 
 intellij {
     pluginName 'reactored-generator'
